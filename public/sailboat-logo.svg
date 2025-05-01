@@ -1,0 +1,16 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Hull -->
+  <path d="M4 24C4 24 12 26 16 26C20 26 28 24 28 24L26 28H6L4 24Z" fill="#2B4555"/>
+  
+  <!-- Main Sail -->
+  <path d="M16 6L16 24L26 24C26 24 24 16 16 6Z" fill="#3B82F6"/>
+  
+  <!-- Jib Sail -->
+  <path d="M16 12L16 24L8 24C8 24 12 18 16 12Z" fill="#60A5FA"/>
+  
+  <!-- Mast -->
+  <path d="M15 5H17V24H15V5Z" fill="#1E3A8A"/>
+  
+  <!-- Water Reflection -->
+  <path d="M4 24C4 24 12 25 16 25C20 25 28 24 28 24" stroke="#60A5FA" stroke-width="0.5"/>
+</svg> 
