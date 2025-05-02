@@ -1,7 +1,7 @@
 export const races = [
   {
     title: "Weekly Series Klamath YC",
-    date: "Aug 9, 2025",
+    date: "May 13, 2025",
     location: "Klamath Falls, OR",
     startTime: "1:00 PM",
     endTime: "4:00 PM",
