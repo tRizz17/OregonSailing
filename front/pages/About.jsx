@@ -1,3 +1,5 @@
+
+
 import { useState } from 'react';
 import ExternalLinkWarning from '../components/ExternalLinkWarning';
 
@@ -20,6 +22,7 @@ const resources = [
   },
 ];
 
+
 function About() {
   const [warningUrl, setWarningUrl] = useState(null);
 
@@ -27,6 +30,7 @@ function About() {
     e.preventDefault();
     setWarningUrl(url);
   };
+
 
   const handleConfirmNavigation = () => {
     if (warningUrl) {
