@@ -35,7 +35,6 @@ function Home() {
         try {
           await deleteRace(race._id);
           console.log(`Deleted past race: ${race.title}`);
-          // Remove the deleted race from our local array
           updatedRaces = updatedRaces.filter(r => r._id !== race._id);
         } catch (err) {
           console.error(`Failed to delete race ${race._id}:`, err);

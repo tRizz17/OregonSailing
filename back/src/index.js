@@ -1,8 +1,4 @@
-/**
- * Main server file for the Sailing Races API
- * Sets up Express server, middleware, routes, and database connection
- */
-
+// main server file
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
@@ -19,27 +15,19 @@ import termsRoute from './routes/terms.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Load environment variables
 dotenv.config();
 
-// Initialize Express application
 const app = express();
 
-/**
- * Middleware Configuration
- * - CORS: Enables Cross-Origin Resource Sharing
- * - JSON: Parses incoming JSON payloads
- */
+// middleware
 app.use(cors());
 app.use(express.json());
 app.use('/api', forecastRouter);
 app.use('/api', tipRoute);
 app.use('/api', termsRoute);
+app.use('/api/races', raceRoutes);
 
-/**
- * Root Route
- * Provides basic API information
- */
+// root route
 app.get('/', (req, res) => {
   res.json({
     message: 'Welcome to the Sailing Races API',
@@ -57,26 +45,13 @@ app.get('/', (req, res) => {
   });
 });
 
-/**
- * API Routes
- * All race-related endpoints are prefixed with /api/races
- */
-app.use('/api/races', raceRoutes);
 
-/**
- * MongoDB Connection
- * Connects to MongoDB using the URI from environment variables
- * Falls back to localhost if no URI is provided
- */
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/sailing-races')
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
 
-/**
- * Global Error Handler
- * Catches any unhandled errors in the application
- * Returns a 500 status code with a generic error message
- */
+
+ // global error handler
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ message: 'Something went wrong!' });

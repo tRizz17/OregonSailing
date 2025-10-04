@@ -1,8 +1,3 @@
-/**
- * Race Routes
- * Defines all race-related API endpoints
- * @module routes/raceRoutes
- */
 
 import express from 'express';
 import { 
